@@ -1,0 +1,44 @@
+class zmm_exercism_itab definition
+  public
+  final
+  create public .
+
+public section.
+
+ interfaces if_oo_adt_classrun.
+
+protected section.
+private section.
+endclass.
+class zmm_exercism_itab implementation.
+
+method if_oo_adt_classrun~main.
+
+** declare the ITAB type
+ types: begin of initial_type,
+         place      type string,
+         state      type string,
+         ranking type i,
+       end of initial_type.
+
+ types itab_popularplaces type standard table of initial_type with default key.
+ data  popularplaces type itab_popularplaces.
+
+** add values in ITAB
+ popularplaces = value #(
+    ( place = 'Berlin' state = 'Brandenburg' ranking = 1 )
+    ( place = 'Schloss Neuschwanstein' state = 'Bavaria' ranking = 3  )
+    ( place = 'Black Forest' state = 'Baden-Wuerttemberg' ranking = 4  )
+    ( place = 'Ruedesheim' state = 'Baden-Wuerttemberg' ranking = 5 )
+    ( place = 'Dresden' state = 'Saxony' ranking = 7 )
+    ( place = 'Nuremberg' state = 'Bavaria' ranking = 9 )
+    ( place = 'Cologne' state = 'North Rhine-Westphalia' ranking = 10 )
+    ( place = 'Trier' state = 'Rhineland-Palatinate' ranking = 8 )
+    ).
+
+ out->write( name = 'Popular places to visit in Germany:'
+             data = popularplaces ).
+
+  endmethod.
+endclass.
+
